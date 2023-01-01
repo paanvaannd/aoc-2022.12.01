@@ -6,12 +6,10 @@ elf_totals = []
 with open("data.txt", "r") as file:
     data = file.read().splitlines()
 
-for line in range(len(data)):
-    if data[line] != "":
-        #print(f"DEBUG: current line = {data[line]}")
-        single_elf.append(int(data[line]))
+for line in data:
+    if line != "":
+        single_elf.append(int(line))
     else:
-        #print(f"DEBUG: sum total = {sum(elf_items)}")
         elf_totals.append(sum(single_elf))
         single_elf.clear()
 
